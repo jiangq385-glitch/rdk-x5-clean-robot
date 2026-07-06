@@ -1,0 +1,22 @@
+robot_mqtt_bridge:
+  ros__parameters:
+    robot_id: digua-x5-001
+    topic_prefix: robot/digua-x5-001
+
+    mqtt_host: 127.0.0.1
+    mqtt_port: 1883
+    mqtt_username: ''
+    mqtt_password: ''
+    mqtt_use_tls: false
+    mqtt_keepalive_s: 30
+
+    cmd_vel_topic: /cmd_vel
+    robot_status_topic: /robot_status
+    robot_telemetry_topic: /robot_telemetry
+    battery_topic: /battery_voltage
+
+    max_linear_x: 0.3
+    max_angular_z: 1.2
+    status_period_s: 1.0
+    manual_timeout_s: 0.8
+    min_command_interval_s: 0.05

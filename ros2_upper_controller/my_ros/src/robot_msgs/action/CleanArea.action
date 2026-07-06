@@ -1,0 +1,10 @@
+# Goal
+string area
+---
+# Result
+bool success
+string failed_reason
+---
+# Feedback
+string current_phase
+float32 progress

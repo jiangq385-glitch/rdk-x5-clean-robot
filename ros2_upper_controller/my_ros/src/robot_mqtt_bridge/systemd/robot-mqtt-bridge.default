@@ -1,0 +1,9 @@
+# MQTT settings for robot-mqtt-bridge.service.
+# Copy to /etc/default/robot-mqtt-bridge and edit for the real broker.
+ROBOT_ID=digua-x5-001
+MQTT_TOPIC_PREFIX=robot/digua-x5-001
+MQTT_HOST=127.0.0.1
+MQTT_PORT=1883
+MQTT_USERNAME=
+MQTT_PASSWORD=
+MQTT_USE_TLS=false

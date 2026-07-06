@@ -1,0 +1,6 @@
+DEFAULT_OUTPUT_DEVICE = "default"
+DEFAULT_VOICE = "zh-CN-XiaoxiaoNeural"
+DEFAULT_RATE = "+0%"
+DEFAULT_VOLUME = "+0%"
+DEFAULT_TTS_TOPIC = "/tts/text"
+DEFAULT_TMP_DIR = "/tmp/edge_tts_audio"

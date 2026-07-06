@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<robot name="cleaner_robot">
+
+  
+  <!-- 底盘 -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.20" radius="0.15"/>
+      </geometry>
+    <!--- 颜色 -->
+      <material name="blue">
+        <color rgba="0.1 0.1 1.0 0.5"/>
+      </material>
+
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.28" radius="0.15"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- 激光雷达 -->
+  <link name="laser_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.036" radius="0.026"/>
+      </geometry>
+
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 0.8" />
+      </material>
+
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.036" radius="0.026"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="laser_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="laser_link"/>
+    <origin xyz="0.0 0.0 0.032" rpy="0.0 0.0 2.0943951"/>
+  </joint>
+
+  <!-- IMU -->
+  <link name="imu_link">
+    <visual>
+      <geometry>
+        <box size="0.03 0.03 0.01"/>
+      </geometry>
+
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 1.0"/> 
+      </material>
+    </visual>
+  </link>
+
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <!-- 根据实际安装位置调整，这里假设放在底盘中心上方 -->
+    <origin xyz="0.0 0.0 -0.09" rpy="0.0 0.0 0.0"/>
+  </joint>
+
+  <!-- ==================== 左轮 ==================== -->
+  <link name="left_wheel_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.05" length="0.03"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 0.8" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.05" length="0.03"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 0.8" />
+      </material>
+    </collision>
+  </link>
+
+  
+
+  <joint name="left_wheel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_wheel_link"/>
+    <origin xyz="0 0.15 -0.13" rpy="1.5708 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- ==================== 右轮 ==================== -->
+  <link name="right_wheel_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.05" length="0.03"/>
+      </geometry>
+
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 0.8" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.05" length="0.03"/>
+      </geometry>
+
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 0.8" />
+      </material>
+    </collision>
+  </link>
+
+  <joint name="right_wheel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_wheel_link"/>
+    <origin xyz="0 -0.15 -0.13" rpy="1.5708 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- ==================== 前轮万向轮 ==================== -->
+  <link name="front_caster_link">
+    <visual>
+      <geometry>
+        <sphere radius="0.0125" />
+      </geometry>
+
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 0.8"/>
+      </material>
+
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.0125" />
+      </geometry>
+
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 0.8"/>
+      </material>
+    </collision>
+  </link>
+
+  
+
+  <joint name="front_caster_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_caster_link"/>
+    <origin xyz="0.15 0.0 -0.167" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+
+  <!-- ==================== 后轮万向轮 ==================== -->
+  <link name="back_caster_link">
+    <visual>
+      <geometry>
+        <sphere radius="0.0125" />
+      </geometry>
+
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 0.8"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.0125" />
+      </geometry>
+
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 0.8"/>
+      </material>
+    </collision>
+  </link>
+
+  <joint name="back_caster_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="back_caster_link"/>
+    <origin xyz="-0.15 0.0 -0.167" rpy="0 0 0"/>
+    <axis xyz="0 0 0"/>
+  </joint>
+
+</robot>

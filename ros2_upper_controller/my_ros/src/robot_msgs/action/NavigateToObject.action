@@ -1,0 +1,11 @@
+# Goal
+string object_name
+---
+# Result
+bool success
+string failed_reason
+geometry_msgs/PoseStamped goal_pose
+---
+# Feedback
+string current_phase
+float32 progress

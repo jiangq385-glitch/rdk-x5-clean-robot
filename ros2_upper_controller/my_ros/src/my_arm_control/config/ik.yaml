@@ -1,0 +1,41 @@
+ik:
+  geometry_unit: cm
+  input_unit_scale: 100.0
+  bottom_radius: 8.0
+  base_height: 8.2
+  upper_arm_length: 10.5
+  forearm_length: 10.0
+  tool_length: 16.0
+  y_limits: [3.0, 20.0]
+  pose_scan_deg: [0, 180, 1]
+  default_wrist_roll_deg: 0.0
+  default_gripper_deg: 20.0
+  joint_names: [arm_joint_1, arm_joint_2, arm_joint_3, arm_joint_4, arm_joint_5, arm_joint_6]
+  home_pose_rad: [1.5708, 0.6, 0.6, 0.0, 0.0, 0.3491]
+  probe_pose_rad: [1.5708, 0.7, 0.7, 0.0, 0.0, 0.3491]
+  joint_limits_rad:
+    - [0.0, 3.1416]
+    - [0.0, 3.1416]
+    - [0.0, 3.1416]
+    - [-1.5708, 1.5708]
+    - [-3.1416, 3.1416]
+    - [0.0, 4.1888]
+  joint_output:
+    - source: j1
+      direction: 1.0
+      offset_deg: 0.0
+    - source: j2
+      direction: 1.0
+      offset_deg: 0.0
+    - source: j3
+      direction: 1.0
+      offset_deg: 0.0
+    - source: j4
+      direction: 1.0
+      offset_deg: 0.0
+    - source: wrist_roll
+      direction: 1.0
+      offset_deg: 0.0
+    - source: gripper
+      direction: 1.0
+      offset_deg: 0.0

@@ -1,0 +1,10 @@
+std_msgs/Header header
+string arm_name
+string[] joint_names
+float32[] actual_positions
+uint8[] joint_errors
+float32 voltage
+float32 max_temp_c
+uint8 moving_state
+bool torque_enabled
+string error_text

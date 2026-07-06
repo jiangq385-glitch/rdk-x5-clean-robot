@@ -1,0 +1,28 @@
+actions:
+  pick:
+    action_name: /pick_object
+    action_type: robot_msgs/action/PickObject
+    required_params: [object_name]
+    optional_params: [arm]
+    timeout_s: 30
+  place:
+    action_name: /place_object
+    action_type: robot_msgs/action/PlaceObject
+    required_params: [target_pose]
+    optional_params: [arm]
+    timeout_s: 30
+  navigate_to_object:
+    action_name: /navigate_to_object
+    action_type: robot_msgs/action/NavigateToObject
+    required_params: [object_name]
+    timeout_s: 60
+  clean_area:
+    action_name: /clean_area
+    action_type: robot_msgs/action/CleanArea
+    required_params: [area]
+    timeout_s: 120
+  return_home:
+    action_name: /return_home
+    action_type: robot_msgs/action/ReturnHome
+    required_params: []
+    timeout_s: 30

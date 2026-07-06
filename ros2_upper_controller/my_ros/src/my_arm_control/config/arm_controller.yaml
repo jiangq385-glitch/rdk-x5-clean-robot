@@ -1,0 +1,41 @@
+arm_controller:
+  ros__parameters:
+    joint_names: [arm_joint_1, arm_joint_2, arm_joint_3, arm_joint_4, arm_joint_5, arm_joint_6]
+    home_positions: [1.5708, 0.6, 0.6, 0.0, 0.0, 0.3491]
+    lower_limits: [0.0, 0.0, 0.0, -1.5708, -3.1416, 0.0]
+    upper_limits: [3.1416, 3.1416, 3.1416, 1.5708, 3.1416, 4.1888]
+    trajectory_topic: /arm/joint_trajectory
+    target_topic: /arm/joint_target
+    status_topic: /arm/controller_status
+    default_move_time_s: 2.0
+    interpolation_step_s: 0.1
+
+joint_state_node:
+  ros__parameters:
+    joint_names: [arm_joint_1, arm_joint_2, arm_joint_3, arm_joint_4, arm_joint_5, arm_joint_6]
+    home_positions: [1.5708, 0.6, 0.6, 0.0, 0.0, 0.3491]
+    target_topic: /arm/joint_target
+    joint_states_topic: /joint_states
+    arm_joint_states_topic: /arm/joint_states
+    publish_rate_hz: 20.0
+
+vision_pick_node:
+  ros__parameters:
+    object_on_plane_topic: /perception/object_on_plane
+    plane_height_topic: /perception/plane_height
+    trajectory_topic: /arm/joint_trajectory
+    target_frame: base_link
+    joint_names: [arm_joint_1, arm_joint_2, arm_joint_3, arm_joint_4, arm_joint_5, arm_joint_6]
+    home_pose: [1.5708, 0.6, 0.6, 0.0, 0.0, 0.3491]
+    z_pre_grasp: 0.03
+    z_grasp: 0.005
+    z_lift: 0.06
+    grasp_offset: 0.0
+    wrist_roll_deg: 0.0
+    gripper_deg: 20.0
+    approach_time_s: 2.0
+    grasp_time_s: 1.0
+    lift_time_s: 1.0
+    return_home_time_s: 2.0
+    require_plane_height: true
+    auto_execute: true

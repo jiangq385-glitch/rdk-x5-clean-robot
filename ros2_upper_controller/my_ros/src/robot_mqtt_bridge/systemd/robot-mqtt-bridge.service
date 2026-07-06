@@ -1,0 +1,16 @@
+[Unit]
+Description=ROS2 MQTT bridge for WeChat mini program control
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=sunrise
+WorkingDirectory=/home/sunrise/my_ros
+EnvironmentFile=-/etc/default/robot-mqtt-bridge
+ExecStart=/bin/bash -lc 'source /home/sunrise/my_ros/install/setup.bash && exec ros2 launch robot_mqtt_bridge mqtt_bridge.launch.py'
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

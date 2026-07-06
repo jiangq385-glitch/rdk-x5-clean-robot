@@ -1,0 +1,11 @@
+# Goal
+bool force_recalibrate
+---
+# Result
+bool success
+string failed_reason
+robot_msgs/PlaneHeight plane_height
+---
+# Feedback
+string current_phase
+float32 progress
